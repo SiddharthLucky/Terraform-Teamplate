@@ -142,4 +142,6 @@ resource "aws_instance" "main-project-instance" {
   tags = {
     Name = "Main-Project-Instance"
   }
+
+  //This file is for a template of terraform to get started.
 }
