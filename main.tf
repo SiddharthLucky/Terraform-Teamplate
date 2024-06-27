@@ -125,20 +125,21 @@ resource "aws_instance" "main-project-instance" {
   instance_type = "t2.micro"
   //Make sure your Instance and subnet are in the same.
   //Hard code the availability zone in both the subnet and instance.
+  subnet_id = aws_subnet.main-project-subnet-1.id
   availability_zone = "us-east-1a"
-  key_name = "terraform-main-keypair"
+  //key_name = "TF-new-Keypair"
   associate_public_ip_address = true
   #   network_interface {
   #     device_index         = 0
   #     network_interface_id = aws_network_interface.main-project-network-interface.id
   #   }
-  user_data = <<-EOF
-                   #!/bin/bash
-                   sudo apt update -y
-                   sudo apt install apache2 -y
-                   sudo systemctl start apache2
-                   sudo bash -c 'echo your very first web server > /var/www/html/index.html'
-                   EOF
+  # user_data = <<-EOF
+  #                  #!/bin/bash
+  #                  sudo apt update -y
+  #                  sudo apt install apache2 -y
+  #                  sudo systemctl start apache2
+  #                  sudo bash -c 'echo your very first web server > /var/www/html/index.html'
+  #                  EOF
   tags = {
     Name = "Main-Project-Instance"
   }
