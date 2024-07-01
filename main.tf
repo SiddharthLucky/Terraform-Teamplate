@@ -2,6 +2,7 @@ provider "aws" {
   region = "us-east-1"
   # Adding comments for git
   # Adding another comment for git
+  # Adding a third comment for git
 }
 
 //Create a VPC
